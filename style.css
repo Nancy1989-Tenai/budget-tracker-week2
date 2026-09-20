@@ -1,242 +1,94 @@
-/* ==============================================
-   CSS CUSTOM PROPERTIES (COLOR PALETTE)
-   ============================================== */
-:root {
-  --color-primary: #2563EB;      /* Blue — headings, accents */
-  --color-primary-dark: #1E40AF; /* Darker blue — hover states */
-  --color-accent: #10B981;       /* Emerald green — buttons */
-  --color-accent-dark: #059669;  /* Darker green — button hover */
-  --color-dark: #1E293B;         /* Slate — table headers, text */
-  --color-text: #334155;         /* Medium slate — body text */
-  --color-text-light: #64748B;   /* Light slate — secondary text */
-  --color-bg: #F1F5F9;           /* Light gray — page background */
-  --color-white: #FFFFFF;        /* White — cards */
-  --color-border: #E2E8F0;       /* Soft border */
-  --color-row-alt: #F8FAFC;      /* Alternating table row */
-  --color-row-hover: #DBEAFE;    /* Table row hover */
-}
-
-/* ==============================================
-   RESET & BASE
-   ============================================== */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* ==========================================
+   1. TYPOGRAPHY & BASE (Instructor Approved)
+   ========================================== */
 body {
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--color-text);
-  background-color: var(--color-bg);
-  padding: 24px;
-  max-width: 900px;
-  margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    background-color: #fafafa;
+    margin: 20px;
+    color: #333;
 }
 
-/* ==============================================
-   TYPOGRAPHY
-   ============================================== */
-h1, h2, h3 {
-  font-family: 'Poppins', sans-serif;
-  color: var(--color-dark);
-  line-height: 1.3;
+h1, h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #2e7d32; /* Consistent green theme color */
 }
 
-h1 {
-  font-size: 2rem;
-  font-weight: 700;
+/* ==========================================
+   2. BOX MODEL: CARD STYLING 
+   ========================================== */
+/* Makes the Form and Table sections look like distinct cards */
+.add-expense-section, 
+.expenses-section,
+.video-section,
+.help-section {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
 }
 
-h2 {
-  font-size: 1.35rem;
-  font-weight: 600;
-  margin-bottom: 18px;
-  padding-bottom: 10px;
-  border-bottom: 3px solid var(--color-primary);
-  color: var(--color-primary);
-}
-
-/* ==============================================
-   HEADER (Card Style)
-   ============================================== */
-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  background-color: var(--color-white);
-  padding: 24px 30px;
-  margin-bottom: 28px;
-  border-radius: 12px;
-  border: 1px solid var(--color-border);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-
-header h1 {
-  color: var(--color-primary);
-}
-
-/* ==============================================
-   SECTIONS (Card Style — Box Model)
-   ============================================== */
-section {
-  background-color: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  padding: 28px 30px;
-  margin-bottom: 28px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-
-/* ==============================================
-   FORM STYLING
-   ============================================== */
-.add-expense-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  align-items: flex-end;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 180px;
-}
-
-.form-group label {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 0.88rem;
-  color: var(--color-dark);
-  margin-bottom: 6px;
-}
-
-input:not([type="submit"]),
-select {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  padding: 11px 14px;
-  border: 2px solid var(--color-border);
-  border-radius: 8px;
-  color: var(--color-text);
-  background-color: var(--color-white);
-  transition: border-color 0.25s, box-shadow 0.25s;
-}
-
-input:focus,
-select:focus {
-  outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-}
-
-/* Button */
-.add-expense-form > button {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 12px 30px;
-  background-color: var(--color-accent);
-  color: var(--color-white);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.25s, transform 0.15s;
-  align-self: flex-end;
-}
-
-.add-expense-form > button:hover {
-  background-color: var(--color-accent-dark);
-  transform: translateY(-1px);
-}
-
-/* ==============================================
-   TABLE STYLING
-   ============================================== */
+/* ==========================================
+   3. TABLE STYLING (Instructor Approved)
+   ========================================== */
 table {
-  width: 100%;
-  border-collapse: collapse;
-  border-radius: 8px;
-  overflow: hidden;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-/* Table Header */
-.expenses-section thead th {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  background-color: var(--color-dark);
-  color: var(--color-white);
-  padding: 14px 16px;
-  text-align: left;
-  border: none;
+th {
+    background-color: #2e7d32; /* Matches theme color */
+    color: white;
+    padding: 12px;
+    text-align: left;
 }
 
-/* Table Cells */
-.expenses-section tbody td {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  padding: 13px 16px;
-  border-bottom: 1px solid var(--color-border);
-  color: var(--color-text);
+td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
 }
 
-/* Alternating Row Colors */
-.expenses-section tbody tr:nth-child(even) {
-  background-color: var(--color-row-alt);
+tr:nth-child(even) {
+    background-color: #f5f5f5; /* Alternating row color */
 }
 
-/* Row Hover */
-.expenses-section tbody tr:hover {
-  background-color: var(--color-row-hover);
-  transition: background-color 0.2s;
+/* ==========================================
+   4. FORM & BUTTON STYLING (Instructor Approved)
+   ========================================== */
+.form-group {
+    margin-bottom: 15px;
 }
 
-/* ==============================================
-   VIDEO SECTION
-   ============================================== */
-.video-section iframe {
-  max-width: 100%;
-  border-radius: 8px;
-  border: 2px solid var(--color-border);
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-family: 'Inter', sans-serif;
 }
 
-/* ==============================================
-   DETAILS / SUMMARY
-   ============================================== */
-details {
-  cursor: pointer;
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box; /* Ensures padding doesn't break width */
 }
 
-details summary {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: var(--color-primary);
-  padding: 6px 0;
+button {
+    background-color: #2e7d32; /* Matches theme color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
 }
 
-details p {
-  margin-top: 12px;
-  line-height: 1.7;
-  color: var(--color-text-light);
-}
-
-/* ==============================================
-   FOOTER
-   ============================================== */
-footer {
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 10px;
-  font-size: 0.85rem;
-  color: var(--color-text-light);
-  border-top: 1px solid var(--color-border);
+button:hover {
+    background-color: #1b5e20; /* Slightly darker green on hover */
 }
