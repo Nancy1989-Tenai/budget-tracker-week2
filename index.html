@@ -1,10 +1,110 @@
-   <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Budget Tracker</title>
-     
-     <!-- EXACT FONT LINK FROM INSTRUCTOR -->
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter&display=swap" rel="stylesheet">
-     
-     <link rel="stylesheet" href="style.css">
-   </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Tracker</title>
+  
+  <!-- Google Fonts (Approved by Instructor) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter&display=swap" rel="stylesheet">
+  
+  <!-- Link to your excellent CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Budget Tracker</h1>
+  </header>
+
+  <!-- ADD EXPENSE FORM CARD -->
+  <section class="add-expense-section">
+    <h2>Add New Expense</h2>
+    <form>
+      <div class="form-group">
+        <label for="expense-name">Expense Name</label>
+        <input type="text" id="expense-name" placeholder="e.g., Groceries">
+      </div>
+
+      <div class="form-group">
+        <label for="expense-amount">Amount ($)</label>
+        <input type="number" id="expense-amount" placeholder="0.00" step="0.01">
+      </div>
+
+      <div class="form-group">
+        <label for="expense-category">Category</label>
+        <select id="expense-category">
+          <option value="">Select a category</option>
+          <option value="food">Food</option>
+          <option value="transport">Transport</option>
+          <option value="rent">Rent</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="expense-date">Date</label>
+        <input type="date" id="expense-date">
+      </div>
+
+      <button type="button">Add Expense</button>
+    </form>
+  </section>
+
+  <!-- EXPENSE TABLE CARD -->
+  <section class="expenses-section">
+    <h2>Expense History</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Groceries</td>
+          <td>$45.00</td>
+          <td>Food</td>
+          <td>2026-09-01</td>
+        </tr>
+        <tr>
+          <td>Bus Pass</td>
+          <td>$30.00</td>
+          <td>Transport</td>
+          <td>2026-09-03</td>
+        </tr>
+        <tr>
+          <td>Monthly Rent</td>
+          <td>$1,200.00</td>
+          <td>Rent</td>
+          <td>2026-09-01</td>
+        </tr>
+        <tr>
+          <td>Movie Tickets</td>
+          <td>$24.00</td>
+          <td>Entertainment</td>
+          <td>2026-09-07</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- VIDEO CARD (Optional but matches your CSS) -->
+  <section class="video-section">
+    <h2>Budgeting Tips</h2>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/aIi1mTMRG9E" title="Budgeting tips" frameborder="0" allowfullscreen style="border-radius: 8px;"></iframe>
+  </section>
+
+  <!-- HELP CARD (Optional but matches your CSS) -->
+  <section class="help-section">
+    <h2>How to Use</h2>
+    <p>Fill out the form above and click "Add Expense" to track your spending. The table below will update to show your history.</p>
+  </section>
+
+</body>
+</html>
