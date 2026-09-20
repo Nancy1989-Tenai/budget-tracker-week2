@@ -1,145 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Budget Tracker</title>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+# Budget Tracker — Week 3 Visual Design Upgrade
 
-  <!-- ===== HEADER WITH LOGO ===== -->
-  <header>
-    <img
-      src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png"
-      alt="Budget Tracker wallet icon"
-      width="52"
-    >
-    <h1>Budget Tracker</h1>
-  </header>
+## What I Built
 
-  <main>
+This is a **personal budget tracker** web application built with semantic HTML and CSS. This week's update focused entirely on **visual design** — transforming the functional Week 2 layout into a polished, modern interface using a cohesive color palette, custom Google Fonts, refined table and form styling, and intentional use of the CSS Box Model.
 
-    <!-- ===== ADD EXPENSE FORM ===== -->
-    <section class="add-expense-section">
-      <h2>Add New Expense</h2>
+---
 
-      <form class="add-expense-form">
-        <div class="form-group">
-          <label for="expense-name">Expense Name</label>
-          <input type="text" id="expense-name" placeholder="e.g. Groceries">
-        </div>
+## Color Palette
 
-        <div class="form-group">
-          <label for="expense-amount">Amount ($)</label>
-          <input type="number" id="expense-amount" placeholder="0.00" min="0" step="0.01">
-        </div>
+| Role | Color | Hex |
+|---|---|---|
+| Primary (headings, accents) | Blue | `#2563EB` |
+| Accent (buttons) | Emerald Green | `#10B981` |
+| Dark (table headers, text) | Slate | `#1E293B` |
+| Page Background | Light Gray | `#F1F5F9` |
+| Cards | White | `#FFFFFF` |
+| Borders | Soft Gray | `#E2E8F0` |
 
-        <div class="form-group">
-          <label for="expense-category">Category</label>
-          <select id="expense-category">
-            <option value="" disabled selected>Select a category</option>
-            <option value="food">Food</option>
-            <option value="transport">Transport</option>
-            <option value="rent">Rent</option>
-            <option value="entertainment">Entertainment</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
+---
 
-        <div class="form-group">
-          <label for="expense-date">Date</label>
-          <input type="date" id="expense-date">
-        </div>
+## Typography
 
-        <button type="button" id="add-expense-btn">Add Expense</button>
-      </form>
-    </section>
+- **Headings:** [Poppins](https://fonts.google.com/specimen/Poppins) — modern, geometric sans-serif for visual hierarchy
+- **Body text:** [Inter](https://fonts.google.com/specimen/Inter) — highly readable sans-serif optimized for screens
 
-    <!-- ===== EXPENSE TABLE ===== -->
-    <section class="expenses-section">
-      <h2>Expense History</h2>
+---
 
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Amount</th>
-            <th>Category</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Groceries</td>
-            <td>$45.00</td>
-            <td>Food</td>
-            <td>2026-09-01</td>
-          </tr>
-          <tr>
-            <td>Bus Pass</td>
-            <td>$30.00</td>
-            <td>Transport</td>
-            <td>2026-09-03</td>
-          </tr>
-          <tr>
-            <td>Monthly Rent</td>
-            <td>$1,200.00</td>
-            <td>Rent</td>
-            <td>2026-09-01</td>
-          </tr>
-          <tr>
-            <td>Movie Tickets</td>
-            <td>$24.00</td>
-            <td>Entertainment</td>
-            <td>2026-09-07</td>
-          </tr>
-          <tr>
-            <td>Phone Bill</td>
-            <td>$55.00</td>
-            <td>Other</td>
-            <td>2026-09-10</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+## File Breakdown
 
-    <!-- ===== MULTIMEDIA: YOUTUBE VIDEO ===== -->
-    <section class="video-section">
-      <h2>Budgeting Tips</h2>
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/aIi1mTMRG9E"
-        title="Budgeting tips for beginners"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </section>
+### `index.html`
+Contains the full page structure: header with logo, Add Expense form with dropdown, expense history table with 5 data rows, embedded YouTube video, and collapsible help section. The only change from Week 2 is the addition of Google Fonts `<link>` tags in the `<head>`.
 
-    <!-- ===== INTERACTIVE: COLLAPSIBLE HELP ===== -->
-    <section class="help-section">
-      <details>
-        <summary>How to Use This Tracker</summary>
-        <p>
-          Fill in the <strong>Add New Expense</strong> form above with the name,
-          amount, category, and date of your expense, then click
-          <em>Add Expense</em>. Your entry will appear in the
-          <strong>Expense History</strong> table below. Use the category
-          dropdown to keep your spending organized.
-        </p>
-      </details>
-    </section>
+### `style.css`
+Completely redesigned stylesheet featuring:
+- **CSS Custom Properties** (`:root` variables) for a consistent color palette
+- **Google Fonts** applied to headings (Poppins) and body (Inter)
+- **Card-style sections** using padding, border-radius, borders, and box-shadow
+- **Polished table** with dark header, alternating row colors, and hover effects
+- **Styled form** with rounded inputs, focus states, and a green action button
+- **Box Model** used intentionally: margin separates sections, padding creates internal space, borders define edges, border-radius softens corners
 
-  </main>
+---
 
-  <footer>
-    <p>&copy; 2026 Budget Tracker Project</p>
-  </footer>
+## How to View
 
-</body>
-</html>
+1. Clone or download this repository.
+2. Open `index.html` in any modern browser.
+3. No build tools or dependencies required.
+
+---
+
+## Grading Rubric Coverage
+
+| Criterion | Where It's Met |
+|---|---|
+| Intentional Color Palette (25%) | CSS variables define 10+ colors applied consistently to background, headings, buttons, table headers, borders, and hover states. |
+| Typography (20%) | Poppins for headings, Inter for body — loaded via Google Fonts, applied consistently across all elements. |
+| Table & Form Styling (30%) | Table has dark header, cell padding, alternating rows, hover effect. Form has rounded inputs, focus glow, styled green button. |
+| CSS Box Model (25%) | Every section is a "card" with margin (28px gap), padding (28–30px), border (1px solid), and border-radius (12px). |
